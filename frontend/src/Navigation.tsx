@@ -450,7 +450,29 @@ export default function Navigation({ navOpen, setNavOpen }: NavigationProps) {
           </div>
         </div>
       </div>
-      <div className="sticky z-10 h-16 w-full border-b-2 bg-gray-50 dark:border-b-purple-taupe dark:bg-chinese-black md:hidden">
+      <div className="sticky z-10 h-16 w-full border-b-2 bg-gray-50 dark:border-b-purple-taupe dark:bg-chinese-black flex justify-between items-center px-4">
+  <div className="flex gap-4 items-center">
+    <button
+      className="h-6 w-6 md:hidden"
+      onClick={() => setNavOpen(true)}
+    >
+      <img
+        src={Hamburger}
+        alt="Toggle mobile menu"
+        className="w-7 filter dark:invert"
+      />
+    </button>
+    <div className="text-[#949494] font-medium text-[20px]">DocsGPT</div>
+  </div>
+  <button
+    className="bg-blue-500 text-white rounded px-3 py-1 text-sm"
+    onClick={() => {
+      setShareModalStatus(true);
+      console.log("Share button clicked!");
+    }}
+  >
+    Share
+  </button>
         <div className="flex gap-6 items-center h-full ml-6 ">
           <button
             className=" h-6 w-6 md:hidden"
