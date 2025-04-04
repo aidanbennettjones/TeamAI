@@ -209,7 +209,7 @@ export default function Navigation({ navOpen, setNavOpen }: NavigationProps) {
   return (
     <>
       {!navOpen && (
-        <div className="duration-25 absolute  top-3 left-3 z-20 hidden transition-all md:block">
+        <div className="absolute top-3 left-3 z-20 block md:block">
           <div className="flex gap-3 items-center">
             <button
               onClick={() => {
