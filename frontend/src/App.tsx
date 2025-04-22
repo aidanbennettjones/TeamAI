@@ -31,11 +31,17 @@ function MainLayout() {
   const [navOpen, setNavOpen] = useState(!isMobile);
 
   return (
-    <div className="flex flex-col md:flex-row h-screen w-full dark:bg-raisin-black">
+    <div className="dark:bg-raisin-black relative h-screen overflow-auto">
       <Navigation navOpen={navOpen} setNavOpen={setNavOpen} />
-      <main className="flex-1 overflow-auto">
+      <div
+        className={`h-[calc(100dvh-64px)] md:h-screen ${
+          !isMobile
+            ? `ml-0 ${!navOpen ? 'md:mx-auto lg:mx-auto' : 'md:ml-72'}`
+            : 'ml-0 md:ml-16'
+        }`}
+      >
         <Outlet />
-      </main>
+      </div>
     </div>
   );
 }
