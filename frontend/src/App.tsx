@@ -31,8 +31,9 @@ function MainLayout() {
   const [navOpen, setNavOpen] = useState(!isMobile);
 
   return (
-    <div className="dark:bg-raisin-black relative h-screen overflow-auto">
+    <div className="relative flex flex-col md:flex-row h-screen w-full">
       <Navigation navOpen={navOpen} setNavOpen={setNavOpen} />
+      <main className="flex-1 overflow-auto">
       <div
         className={`h-[calc(100dvh-64px)] md:h-screen ${
           !isMobile
@@ -42,6 +43,7 @@ function MainLayout() {
       >
         <Outlet />
       </div>
+      </main>
     </div>
   );
 }
